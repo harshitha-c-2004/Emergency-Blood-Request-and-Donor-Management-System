@@ -52,3 +52,27 @@ python app.py
 ## 👩‍💻 Author
 
 Harshitha C
+
+## 📸 Project Screenshots
+
+### Home Page
+![Home](images/images/Home.png)
+
+### Hospital Login
+![Hospital Login](images/images/Hospital%20login.png)
+
+### Add Patient
+![Add Patient](images/images/Add%20Patient.png)
+
+### Blood Request
+![Blood Request](images/images/Request.png)
+
+### Email Alert
+![Email Alert](images/images/Email%20alert.png)
+
+### Confirmation Message
+![Confirmation](images/images/conformed%20message.png)
+
+### Donor List
+![Donor Table](images/images/Donor%20table.png)
+

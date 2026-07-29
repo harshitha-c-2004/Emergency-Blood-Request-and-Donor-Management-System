@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Donor List</title>
+
+    <style>
+
+        body{
+            font-family: Arial;
+            background:#f2f2f2;
+            padding:20px;
+        }
+
+        h2{
+            text-align:center;
+            color:darkred;
+        }
+
+        table{
+            width:100%;
+            border-collapse:collapse;
+            background:white;
+        }
+
+        th{
+            background:darkred;
+            color:white;
+            padding:12px;
+        }
+
+        td{
+            padding:10px;
+            text-align:center;
+        }
+
+        tr:nth-child(even){
+            background:#f9f9f9;
+        }
+
+        a{
+            text-decoration:none;
+        }
+
+        .btn{
+            padding:6px 12px;
+            border-radius:5px;
+            color:white;
+        }
+
+        .edit{
+            background:green;
+        }
+
+        .delete{
+            background:red;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<h2>Registered Donors</h2>
+
+<table border="1">
+
+<tr>
+    <th>ID</th>
+    <th>Name</th>
+    <th>Email</th>
+    <th>Phone</th>
+    <th>Blood Group</th>
+     <th>Location</th>
+    <th>Last Donation</th>
+    <th>Status</th>
+    <th>Action</th>
+</tr>
+
+{% for donor in donors %}
+
+<tr>
+
+    <td>{{ loop.index }}</td>
+    <td>{{ donor[1] }}</td>
+    <td>{{ donor[2] }}</td>
+    <td>{{ donor[3] }}</td>
+    <td>{{ donor[4] }}</td>
+
+    <td>{{ donor[5] }}</td>  <!-- Location -->
+    <td>{{ donor[6] }}</td>  <!-- Last Donation -->
+    <td>{{ donor[8] }}</td>  <!-- Remaining Days -->
+    <td>{{ donor[7] }}</td>  <!-- Status -->
+
+    <td>
+
+        <a href="/edit_donor/{{ donor[0] }}"
+           class="btn edit">
+           Edit
+        </a>
+
+        <a href="/delete_donor/{{ donor[0] }}"
+           class="btn delete"
+           onclick="return confirm('Delete donor?')">
+           Delete
+        </a>
+
+    </td>
+
+</tr>
+
+{% endfor %}
+
+</table>
+
+<br><br>
+
+<a href="/hospital_dashboard">
+    Back to Dashboard
+</a>
+
+</body>
+</html>

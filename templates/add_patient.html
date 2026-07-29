@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <title>Add Patient</title>
+
+    <style>
+        body {
+            background-image: url("https://t3.ftcdn.net/jpg/03/09/20/22/360_F_309202280_CgsWoCAdLBe9INBvdwBKUkpaLEP4XNLa.jpg");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+
+            font-family: Arial, sans-serif;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+    .form-container {
+    background: rgba(0, 128, 128, 0.25);
+
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+
+    padding: 25px;
+    border-radius: 12px;
+    width: 350px;
+
+    box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+        h2 {
+    text-align: center;
+    color:  #000000;
+ 
+    margin-bottom: 20px;
+}
+
+label {
+    font-weight: bold;
+    color: #000000;
+}
+
+a {
+    display: block;
+    text-align: center;
+    margin-top: 10px;
+    color: #6F4E37;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+        input, select {
+            color: #000000;
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            margin-bottom: 15px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #e74c3c;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #c0392b;
+        }
+
+        a {
+            display: block;
+            text-align: center;
+            margin-top: 10px;
+            color: #2c3e50;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        a:hover {
+            color: #e7dc3c;
+        }
+    </style>
+
+</head>
+
+<body>
+
+{% if message %}
+<script>
+    alert("{{ message }}");
+</script>
+{% endif %}
+
+<div class="form-container">
+
+    <h2>🩺 Add Patient Request</h2>
+
+    <form method="POST" action="/add_patient" onsubmit="showPopup()">
+
+        <label>Patient Name:</label>
+        <input type="text" name="name" required>
+
+        <label>Location:</label>
+        <input type="text" name="location" required>
+
+        <label>Required Blood Group:</label>
+        <select name="blood_group" required>
+            <option disabled selected>Select Blood Group</option>
+            <option>A+</option>
+            <option>A-</option>
+            <option>B+</option>
+            <option>B-</option>
+            <option>O+</option>
+            <option>O-</option>
+            <option>AB+</option>
+            <option>AB-</option>
+        </select>
+
+        <button type="submit">📩 Send Request</button>
+
+    </form>
+
+    <a href="/hospital_dashboard">⬅ Back to Dashboard</a>
+
+</div>
+
+<script>
+function showPopup(){
+    alert("Request Sent Successfully ✅");
+}
+</script>
+
+</body>
+</html>

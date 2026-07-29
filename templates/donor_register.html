@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Donor Registration</title>
+</head>
+<body>
+
+<h2>🧑 Donor Registration</h2>
+
+<form method="POST">
+
+    <label>Donor Name:</label><br>
+    <input type="text" name="name" required><br><br>
+
+    <label>Email:</label><br>
+    <input type="email" name="email" required><br><br>
+
+    <label>Phone:</label><br>
+    <input type="text" name="phone" required><br><br>
+
+    <label>Location:</label><br>
+    <input type="text" name="location" required><br><br>
+
+    <label>Blood Group:</label><br>
+    <select name="blood_group" required>
+        <option value="A+">A+</option>
+        <option value="A-">A-</option>
+        <option value="B+">B+</option>
+        <option value="B-">B-</option>
+        <option value="O+">O+</option>
+        <option value="O-">O-</option>
+        <option value="AB+">AB+</option>
+        <option value="AB-">AB-</option>
+    </select><br><br>
+
+    <button type="submit">📝 Register</button>
+
+</form>
+
+<br>
+
+<a href="/">⬅ Back to Home</a><br>
+<a href="/donor_login">🔐 Already Registered? Login</a>
+
+</body>
+</html>

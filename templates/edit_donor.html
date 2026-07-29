@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Edit Donor</title>
+
+</head>
+
+<body>
+
+<h2>✏ Edit Donor</h2>
+
+<form method="POST">
+
+    <input type="text"
+           name="name"
+           value="{{ donor[1] }}"
+           required><br><br>
+
+    <input type="email"
+           name="email"
+           value="{{ donor[2] }}"
+           required><br><br>
+
+    <input type="text"
+           name="phone"
+           value="{{ donor[3] }}"
+           required><br><br>
+
+    <input type="text"
+           name="blood_group"
+           value="{{ donor[4] }}"
+           required><br><br>
+
+    <label>Location:</label><br>
+
+    <input type="text"
+           name="location"
+           value="{{ donor[5] }}"
+           required><br><br>
+
+    <!--  Not edit Last Donation Date -->
+    <label>Last Donation Date:</label><br>
+
+    <input type="date"
+       name="last_donation"
+       value="{{ donor[6] }}"
+       readonly><br><br>
+
+
+    <!-- Remaining Days Auto Display -->
+    <label>Remaining Days:</label><br>
+
+    <input type="text"
+           value="{{ donor[7] }}"
+           readonly><br><br>
+
+
+    <!-- Status -->
+    <select name="status" required>
+
+        <option value="AVAILABLE"
+            {% if donor[8] == 'AVAILABLE' %}
+                selected
+            {% endif %}>
+            AVAILABLE
+        </option>
+
+        <option value="NOT AVAILABLE"
+            {% if donor[8] == 'NOT AVAILABLE' %}
+                selected
+            {% endif %}>
+            NOT AVAILABLE
+        </option>
+
+    </select>
+
+    <br><br>
+
+    <button type="submit">
+        Update Donor
+    </button>
+
+</form>
+
+<br>
+
+<a href="/donors">
+    ⬅ Back
+</a>
+
+</body>
+
+</html>

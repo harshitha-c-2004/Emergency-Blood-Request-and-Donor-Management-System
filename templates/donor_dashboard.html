@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Donor Dashboard</title>
+</head>
+<body>
+
+<h2>Blood Requests</h2>
+
+<table border="1">
+    <tr>
+        <th>S.No</th>
+        <th>Patient ID</th>
+        <th>Status</th>
+        <th>Action</th>
+    </tr>
+
+    {% for r in requests %}
+    <tr>
+        <td>{{ loop.index }}</td>
+        <td>{{ r[1] }}</td>
+        <td>{{ r[3] }}</td>
+        <td>
+            {% if r[3] == "PENDING" %}
+                <a href="/response/{{ r[0] }}/YES">YES</a> |
+                <a href="/response/{{ r[0] }}/NO">NO</a>
+            {% else %}
+                Completed
+            {% endif %}
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+
+<br>
+<a href="/logout">Logout</a>
+
+</body>
+</html>
